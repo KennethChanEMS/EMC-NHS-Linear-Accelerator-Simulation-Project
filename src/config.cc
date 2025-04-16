@@ -7,12 +7,13 @@ Config :: Config(){
         - Energy: 6 - 15
         - SSD: 100 - 150
         - Depth: 0 - 13.6
+        - Field Size: At least 10
     */
     SSD = 100;
-    Depth = 10;
-    Field_Size = 10.0;
+    Depth = 0;
+    Field_Size = 10;
 
-    Energy = 15;
+    Energy = 6;
     numElectrons = 10000;
 }
 
