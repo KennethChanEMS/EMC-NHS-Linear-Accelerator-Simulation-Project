@@ -1,4 +1,4 @@
-# NHS Linac Simulation
+# NHS Medical Linear Accelerator Simulation
 
 This project is the simulation for the Exeter Math Certicate NHS Linear Accelerator research in which out team did research on Medical use Linear Accelerators (LinAc) for its structure and measures for dosing
 
