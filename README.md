@@ -9,10 +9,13 @@ Seen in our report ________, we used Geant4 as our way to simulate the process f
 ## How to use
 
 1. Download bash (if windows is used download WSL)
-2. Download cmake, and qt5
+2. Download cmake, and QT 5
 3. Download Geant4 packages by following the instruction in their home page
 4. Create a build folder and input cmake .. inside the directory in bash
-5. Go to src folder and open config.cc, there you can change field_size, Source to Surface Distance and Beam energy
+5. Go to src folder and open config.cc, there you can change field size, Source to Surface Distance (SSD), beam energy and depth of the detector
 6. Input make
-7. Input ./linacv2 <br>
-By following these steps, you should see a graphic window just press the start button and it will run, the data will be stored in data.csv
+7. Input ./linacv2
+8. A GUI should appear, there on top press the green start button or enter: <br>
+   /run/beamOn N <br>
+   where N is the number of runs
+9. The data obtained after the runs will be logged in data.csv where the field size, SSD, beam energy, depth of detector and absorbed energy
