@@ -17,5 +17,5 @@ Seen in our report ________, we used Geant4 as our way to simulate the process f
 7. Input ./linacv2
 8. A GUI should appear, there on top press the green start button or enter: <br>
    /run/beamOn N <br>
-   where N is the number of runs
+   where N is the number of runs wanted to be executed
 9. The data obtained after the runs will be logged in data.csv where the field size, SSD, beam energy, depth of detector and absorbed energy
