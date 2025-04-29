@@ -146,6 +146,28 @@ Turn, G4ThreeVector(0, -5.25*cm, 0));
     logicDetector = new G4LogicalVolume(solidDetector, P10, "logicGas");
     G4LogicalVolume *logicCase = new G4LogicalVolume(solidCase, Graphite, "logicCase");
 
+    //Cuts
+    G4Region *regPhantom = new G4Region("regPhantom");
+    G4Region *regIC = new G4Region("regIC");
+
+    logicPhantom -> SetRegion(regPhantom);
+    logicDetector -> SetRegion(regIC);
+
+    regPhantom -> AddRootLogicalVolume(logicPhantom);
+    regIC -> AddRootLogicalVolume(logicDetector);
+
+    G4ProductionCutsTable::GetProductionCutsTable() -> SetEnergyRange(250*eV, 100*GeV);
+
+    G4ProductionCuts *cut = new G4ProductionCuts();
+
+    cut->SetProductionCut(0.01*mm, "gamma");
+    cut->SetProductionCut(0.01*mm, "e-");
+    cut->SetProductionCut(0.01*mm, "e+");
+    
+    regPhantom -> SetProductionCuts(cut);
+    regIC -> SetProductionCuts(cut);
+
+
     //Placement World
     G4VPhysicalVolume *physWorld = new G4PVPlacement(nullptr, G4ThreeVector(0, 0, 0), 
 logicWorld, "physWorld" , nullptr, false, 0, true);

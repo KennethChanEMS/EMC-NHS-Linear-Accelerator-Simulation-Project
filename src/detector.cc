@@ -12,7 +12,7 @@ Detector :: Detector(G4String name) : G4VSensitiveDetector(name){
     Field = data[2];
     Depth = data[3];
 
-    file = "/Users/student/Desktop/geant4/Linac_V2/data.csv";
+    file = "../data.csv";
 
 }
 
@@ -23,22 +23,22 @@ Detector :: ~Detector(){
 void Detector :: Initialize(G4HCofThisEvent *){}
 
 void Detector :: EndOfEvent(G4HCofThisEvent *){
+    /*
     ofstream Log_Data(file, ios::app);
     Log_Data << "\n"
-        << Energy << " ,"
-        << SSD << " ,"
-        << Field << " ,"
-        << Depth << " ,"
+        << Energy << ","
+        << SSD << ","
+        << Depth << ","
         << fSuckedEnergy/MeV;
     Log_Data.close();
     G4cout << "Data logging complete" << G4endl;
+    */
 }
 
 G4bool Detector :: ProcessHits(G4Step *Step, G4TouchableHistory *Hist){
     G4double deposit = Step -> GetTotalEnergyDeposit();
-
     if (deposit > 0){
-        fSuckedEnergy += (deposit/MeV);
+        fSuckedEnergy += (deposit/MeV) * 1.2;
     }else{
         return false;
     }
