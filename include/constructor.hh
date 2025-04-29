@@ -9,8 +9,9 @@
 #include "G4NistManager.hh"
 #include "G4RotationMatrix.hh"
 #include "G4SDManager.hh"
-#include "G4UniformElectricField.hh"
-#include "G4FieldManager.hh"
+#include "G4Region.hh"
+#include "G4ProductionCuts.hh"
+#include "G4ProductionCutsTable.hh"
 
 #include "G4LogicalVolume.hh"
 #include "G4VPhysicalVolume.hh"

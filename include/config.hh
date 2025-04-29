@@ -2,6 +2,8 @@
 #define CONFIG_HH
 
 #include <array>
+#include <math.h>
+
 #include "globals.hh"
 
 class Config{
